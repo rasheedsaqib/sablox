@@ -1,0 +1,19 @@
+@import "variables";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: $white;
+  color: $black;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,15 @@
+@import "styles/variables";
+
+.notification{
+  background-color: $blue;
+  background-image: url("/bg.png");
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p{
+    margin: -0.1rem 0 0 0;
+    color: $white;
+  }
+}

@@ -1,7 +1,28 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
+import Head from "next/head";
+import Navbar from "../UI/Navbar/navbar";
+import Notification from "../UI/Notification/notification";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function MyApp({Component, pageProps}) {
+    return (
+        <>
+            <Head>
+                <title>SaBloX</title>
+
+                <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={+true}/>
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap"
+                    rel="stylesheet"/>
+
+            </Head>
+
+            <Notification/>
+            <Navbar/>
+
+            <Component {...pageProps} />
+        </>
+    )
 }
 
 export default MyApp
