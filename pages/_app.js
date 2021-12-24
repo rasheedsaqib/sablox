@@ -17,6 +17,9 @@ function MyApp({Component, pageProps}) {
                     href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap"
                     rel="stylesheet"/>
 
+
+                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
             </Head>
 
             <Notification/>

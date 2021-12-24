@@ -9,14 +9,14 @@
 
   .active{
     border: 2px solid $blue;
-    border-radius: 5rem;
     color: $blue;
     opacity: 1;
   }
 
   p{
     cursor: pointer;
-    padding: 0.8rem 1.2rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5rem;
     border: 2px solid transparent;
     font-weight: bold;
     opacity: 0.7;

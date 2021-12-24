@@ -15,7 +15,7 @@ const Navbar = props => {
                     <Link href='/'><a>Home</a></Link>
                 </li>
                 <li>
-                    <Link href='/'><a>Categories <img src='/arrow.png' alt='Arrow' /> </a></Link>
+                    <Link href='/'><a>Categories <div> <i className="fas fa-chevron-down" /> </div> </a></Link>
                 </li>
                 <li>
                     <Link href='/'><a>Demo</a></Link>

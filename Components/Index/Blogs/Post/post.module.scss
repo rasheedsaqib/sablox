@@ -1,0 +1,47 @@
+@import "styles/variables";
+
+.post{
+
+  .image{
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .tag{
+    display: inline-flex;
+    font-size: 0.9rem;
+    width: auto;
+    padding: 0.4rem 1rem;
+    background: rgba($blue, 0.1);
+    border-radius: 2rem;
+    font-weight: 500;
+    margin: 0.8rem 0;
+    color: $blue;
+  }
+
+  h2{
+    font-weight: 900;
+    margin: 0;
+    line-height: 120%;
+    opacity: 0.9;
+  }
+
+  .owner{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+    p{
+      font-size: 0.9rem;
+      font-weight: bold;
+      opacity: 0.5;
+      margin: 0;
+    }
+
+    p:nth-child(2){
+      margin: -0.5rem 0.5rem 0 0.5rem;
+    }
+
+  }
+}

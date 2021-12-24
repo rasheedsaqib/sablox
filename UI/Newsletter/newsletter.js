@@ -1,4 +1,5 @@
 import styles from './newsletter.module.scss';
+import withWidth from "../../HOC/withWidth";
 
 const Newsletter = props => {
     return (
@@ -17,4 +18,4 @@ const Newsletter = props => {
     )
 }
 
-export default Newsletter;
+export default withWidth(Newsletter);

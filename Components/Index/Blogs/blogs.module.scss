@@ -1,0 +1,15 @@
+@import "styles/variables";
+
+.blogs{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2rem;
+  margin: 2rem 0;
+
+  .allBlogs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    height: auto;
+  }
+}
