@@ -2,6 +2,8 @@ import '../styles/globals.scss'
 import Head from "next/head";
 import Navbar from "../UI/Navbar/navbar";
 import Notification from "../UI/Notification/notification";
+import Newsletter from "../UI/Newsletter/newsletter";
+import Footer from "../UI/Footer/footer";
 
 function MyApp({Component, pageProps}) {
     return (
@@ -21,6 +23,9 @@ function MyApp({Component, pageProps}) {
             <Navbar/>
 
             <Component {...pageProps} />
+
+            <Newsletter />
+            <Footer />
         </>
     )
 }

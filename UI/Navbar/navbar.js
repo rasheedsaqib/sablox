@@ -5,10 +5,10 @@ import Link from "next/link";
 const Navbar = props => {
     return(
         <div className={styles.navbar}>
-            <div className={styles.logo}>
+            <Link href='/'><a className={styles.logo}>
                 <img src='/logo.png' alt='SaBloX' />
                 <h2>SaBloX</h2>
-            </div>
+            </a></Link>
 
             <ul className={styles.navItems}>
                 <li>

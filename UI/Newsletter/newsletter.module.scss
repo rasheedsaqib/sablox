@@ -1,0 +1,71 @@
+@import "styles/variables";
+
+.newsletter{
+  padding: 4rem;
+  margin: 0 auto 2rem auto;
+  background-color: rgba($blue, 0.1);
+  background-image: url('/newletter.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(1280px - 4rem);
+
+
+  .upperTitle{
+    margin: 0;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: $blue;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .upperLine{
+    margin: 0 0 1rem 0;
+    font-weight: 900;
+    text-align: center;
+    font-size: 3rem;
+    line-height: 120%;
+    opacity: 0.9;
+  }
+
+  .line{
+    font-size: 1.2rem;
+    opacity: 0.3;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .input{
+    background: rgba($white, 0.7);
+    border-radius: 5rem;
+    margin-top: 2rem;
+
+    input{
+      width: 300px;
+      background: none;
+      border: none;
+      outline: none;
+      height: 3.6rem;
+      font-family: inherit;
+      padding: 0 1rem 0 1.4rem;
+    }
+
+    button{
+      margin: 0 0.6rem 0 0;
+      padding: 1rem 1.4rem;
+      border: none;
+      outline: none;
+      background: $blue;
+      color: $white;
+      border-radius: 3rem;
+      cursor: pointer;
+      transition: 0.4s ease;
+
+      &:hover{
+        background: rgba($blue, 0.8);
+      }
+    }
+  }
+}

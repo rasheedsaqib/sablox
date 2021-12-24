@@ -1,0 +1,33 @@
+@import "styles/variables";
+
+.footer{
+  hr{
+    border-color: $black;
+    border-width: 1px;
+    opacity: 0.1;
+  }
+
+  .bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+
+    .logo{
+      display: inline-flex;
+
+      img{
+        height: 1.8rem;
+      }
+
+      h2{
+        margin: -0.1rem 0 0 0.5rem;
+        font-size: 1.4rem;
+      }
+    }
+
+    p{
+      opacity: 0.5;
+    }
+  }
+}
