@@ -22,42 +22,42 @@ export async function getStaticProps() {
                     owner: 'Hussain Ahmad',
                     tag: 'Development',
                     createdAt: 'December 9, 2021',
-                    image: 'http://localhost:3000/thumbnail.jpg'
+                    image: '/thumbnail.jpg'
                 },
                 {_id: 2, title: 'Lorem ipsum dolor sit Amet, consectetur',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing',
                     owner: 'Hussain Ahmad',
                     tag: 'Development',
                     createdAt: 'December 9, 2021',
-                    image: 'http://localhost:3000/thumbnail2.jpg'
+                    image: '/thumbnail2.jpg'
                 },
                 {_id: 3, title: 'Lorem ipsum dolor sit Amet, consectetur',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing',
                     owner: 'Hussain Ahmad',
                     tag: 'Development',
                     createdAt: 'December 9, 2021',
-                    image: 'http://localhost:3000/thumbnail3.jpg'
+                    image: '/thumbnail3.jpg'
                 },
                 {_id: 4, title: 'Lorem ipsum dolor sit Amet, consectetur',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing',
                     owner: 'Hussain Ahmad',
                     tag: 'Development',
                     createdAt: 'December 9, 2021',
-                    image: 'http://localhost:3000/thumbnail.jpg'
+                    image: '/thumbnail.jpg'
                 },
                 {_id: 5, title: 'Lorem ipsum dolor sit Amet, consectetur',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing',
                     owner: 'Hussain Ahmad',
                     tag: 'Development',
                     createdAt: 'December 9, 2021',
-                    image: 'http://localhost:3000/thumbnail2.jpg'
+                    image: '/thumbnail2.jpg'
                 },
                 {_id: 6, title: 'Lorem ipsum dolor sit Amet, consectetur',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing',
                     owner: 'Hussain Ahmad',
                     tag: 'Development',
                     createdAt: 'December 9, 2021',
-                    image: 'http://localhost:3000/thumbnail3.jpg'
+                    image: '/thumbnail3.jpg'
                 }
             ]
         }

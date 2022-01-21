@@ -20,6 +20,8 @@ function MyApp({Component, pageProps}) {
 
                 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
+                <link rel='icon' href='/favicon.ico'/>
+
             </Head>
 
             <Notification/>
