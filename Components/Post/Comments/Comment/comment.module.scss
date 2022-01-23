@@ -1,0 +1,45 @@
+@import "../../../../styles/variables";
+
+.comment{
+  .name{
+    display: flex;
+    align-items: center;
+
+    img{
+      width: 4rem;
+      border-radius: 4rem;
+    }
+
+    .text{
+      font-weight: bold;
+      margin-left: 0.8rem;
+
+      p{
+        opacity: 0.5;
+        font-size: 1rem;
+        margin: 0;
+      }
+      h2{
+        font-size: 1.2rem;
+        margin: 0;
+      }
+    }
+  }
+
+  .content{
+    font-size: 1rem;
+  }
+
+  .reply{
+    display: inline;
+    color: $blue;
+    border-bottom: 1px solid $blue;
+    cursor: pointer;
+  }
+
+  .replies{
+    margin: 2rem 0 2rem 2rem;
+    padding: 1rem;
+    border-left: 0.1rem solid rgba($blue, 0.3);
+  }
+}

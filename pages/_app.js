@@ -4,8 +4,12 @@ import Navbar from "../UI/Navbar/navbar";
 import Notification from "../UI/Notification/notification";
 import Newsletter from "../UI/Newsletter/newsletter";
 import Footer from "../UI/Footer/footer";
+import {useRouter} from "next/router";
 
 function MyApp({Component, pageProps}) {
+
+    const router = useRouter();
+
     return (
         <>
             <Head>
@@ -29,7 +33,11 @@ function MyApp({Component, pageProps}) {
 
             <Component {...pageProps} />
 
-            <Newsletter />
+            {router.pathname !== '/404' ?
+                <Newsletter/>
+            :
+                null}
+
             <Footer />
         </>
     )

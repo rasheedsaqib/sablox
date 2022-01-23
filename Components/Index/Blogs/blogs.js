@@ -1,6 +1,9 @@
 import styles from './blogs.module.scss';
-import Sidebar from "../../../UI/Sidebar/sidebar";
 import Post from "./Post/post";
+import Ads from "../../../UI/Sidebar/ad";
+import Newsletter from "../../../UI/Sidebar/newsleteer";
+import Socials from "../../../UI/Sidebar/socials";
+import TopPosts from "../../../UI/Sidebar/topPosts";
 
 const Blogs = props => {
     return(
@@ -17,7 +20,13 @@ const Blogs = props => {
                     })}
                 </div>
             </div>
-            <Sidebar posts={props.posts} />
+            <div style={{marginTop: '-1.2rem'}}>
+                <Ads />
+                <Newsletter />
+                <Socials />
+                <Ads />
+                <TopPosts posts={props.posts} />
+            </div>
         </div>
     )
 }
