@@ -1,7 +1,10 @@
 import {useRouter} from "next/router";
 import withWidth from '../../HOC/withWidth';
 import {default as PostPage} from "../../Components/Post/post";
-import axios from "axios";
+import axios from "../../util/axios";
+import Navbar from "../../UI/Navbar/navbar";
+import Newsletter from "../../UI/Newsletter/newsletter";
+import Footer from "../../UI/Footer/footer";
 
 const Post = props => {
 
@@ -9,24 +12,36 @@ const Post = props => {
 
     return(
         <>
+            <Navbar/>
             <PostPage posts={props.posts} postId={router.query.postId} />
+            <Newsletter/>
+            <Footer/>
         </>
     )
 }
 
 export async function getStaticProps() {
 
-    const posts = await axios.get('http://localhost:3000/api/posts');
+    const posts = await axios.get('/posts');
 
     return {
         props: {
-            posts: posts.data
+            posts: posts.data.map(post => {
+                const date = new Date(post.createdAt);
+                return{
+                    ...post,
+                    owner: post.owner.firstName + ' ' + post.owner.lastName,
+                    category: post.category.name,
+                    about: post.owner.about,
+                    createdAt: date.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric' })
+                }
+            })
         }
     }
 }
 
 export async function getStaticPaths() {
-    const posts = await axios.get('http://localhost:3000/api/posts');
+    const posts = await axios.get('/posts');
 
     const paths = posts.data.map(post => {
         return {params: {postId: '' + post._id}}
@@ -34,7 +49,7 @@ export async function getStaticPaths() {
 
     return {
         paths: paths,
-        fallback: true
+        fallback: false
     }
 }
 

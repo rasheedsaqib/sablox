@@ -18,6 +18,19 @@ a {
   box-sizing: border-box;
 }
 
+.logo{
+  display: inline-flex;
+
+  img{
+    height: 2rem;
+  }
+
+  h2{
+    margin: 0 0 0 0.5rem;
+    font-size: 1.5rem;
+  }
+}
+
 .not-found{
   height: 70vh;
   display: flex;

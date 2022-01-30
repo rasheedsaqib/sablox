@@ -1,19 +1,18 @@
 import styles from './categories.module.scss';
-import {useState} from "react";
 
 const Categories = props => {
 
-    const [categories, setCategories] = useState(['All Categories', 'Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5', 'Category 6', 'Category 7']);
-    const [selected, setSelected] = useState(0);
+    const categories = [{_id: '001', name: 'All Categories'}, ...props.categories];
+    const {selected, setSelected} = props;
 
     return (
         <div className={styles.categories}>
-            {categories.map((category, index) => {
+            {categories.map(category => {
                 return (
-                    <p key={index}
-                       className={index == selected ? styles.active : null}
-                    onClick={() => setSelected(index)}>
-                        {category}
+                    <p key={category._id}
+                       className={category._id === selected ? styles.active : null}
+                       onClick={() => setSelected(category._id)}>
+                        {category.name}
                     </p>
                 )
             })}

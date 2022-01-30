@@ -19,6 +19,24 @@
   margin: 2rem 0;
 
   .content {
+
+    *{
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .tag{
+      display: inline-flex;
+      width: auto;
+      padding: 0.4rem 1rem;
+      background: rgba($blue, 0.1);
+      border-radius: 2rem;
+      font-weight: 500;
+      margin: 1rem 0 0 0;
+      color: $blue;
+    }
+
+
     img {
       width: 100%;
     }
@@ -27,16 +45,53 @@
       margin: 1rem 0;
     }
 
-    h1 {
+    .title{
       font-size: 3rem;
       line-height: 110%;
       font-weight: 900;
+      margin: 1rem 0;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin: 0;
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin: 0;
+    }
+
+    h4 {
+      font-size: 1.8rem;
+      margin: 0;
+      font-weight: 800;
+    }
+
+    h5 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin: 0;
+    }
+
+    h6 {
+      font-size: 1.4rem;
+      margin: 0;
+      font-weight: 800;
     }
 
     p {
       font-size: 1.1rem;
       opacity: 0.8;
-      margin: 1rem 0;
+      margin: 0.4rem 0;
     }
 
     hr {
@@ -45,18 +100,20 @@
       margin: 2rem 0;
     }
 
-    h2 {
-      font-size: 2.2rem;
-      margin: 0;
-      font-weight: 800;
-      opacity: 0.9;
-    }
-
-    .quote {
+    pre {
       padding: 2rem;
       background-color: rgba($blue, 0.1);
       color: $blue;
       background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%235338EA' stroke-width='4' stroke-dasharray='10%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    a{
+      color: $blue;
+      &:hover{
+        text-decoration: underline;
+      }
     }
 
     .about{
@@ -89,3 +146,9 @@
   }
 }
 
+.link{
+  color: $blue;
+  &:hover{
+    text-decoration: underline;
+  }
+}

@@ -2,15 +2,20 @@ import styles from './comments.module.scss';
 import Comment from "./Comment/comment";
 
 const Comments = props => {
+
     return(
         <div className={styles.comments}>
-            <h1>Comments</h1>
+            <h1 style={{margin: '1rem 0'}}>Comments</h1>
 
-            <Comment text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing' />
-            <hr className={styles.hr} />
-            <Comment text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing' />
-            <hr className={styles.hr} />
-            <Comment text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing' />
+            {props.comments.map((comment, index) => {
+                return (
+                    <div key={comment._id}>
+                        <Comment text={comment.content} name={comment.user.firstName + ' ' + comment.user.lastName} date={comment.createdAt} />
+                        {index !== props.comments.length-1 ? <hr className={styles.hr} /> : null}
+                    </div>
+                );
+            })}
+
         </div>
     )
 }

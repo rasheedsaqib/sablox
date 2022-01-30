@@ -1,6 +1,5 @@
 import styles from './footer.module.scss';
 import Link from "next/link";
-import withWidth from "../../HOC/withWidth";
 
 const Footer = props => {
     return(
@@ -18,4 +17,4 @@ const Footer = props => {
     )
 }
 
-export default withWidth(Footer);
+export default Footer;

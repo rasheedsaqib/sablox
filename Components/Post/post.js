@@ -4,11 +4,15 @@ import Newsletter from "../../UI/Sidebar/newsleteer";
 import Socials from "../../UI/Sidebar/socials";
 import TopPosts from "../../UI/Sidebar/topPosts";
 import Link from "next/link";
-import Comment from "./Comments/Comment/comment";
 import Comments from "./Comments/comments";
 import AddComment from "./AddComment/addComment";
+import {useContext, useEffect} from "react";
+import AuthContext from "../../store/AuthContext";
+import ReactMarkdown from "react-markdown";
 
 const Post = props => {
+
+    const {isAuth} = useContext(AuthContext);
 
     const post = props.posts.find(post => '' + post._id === props.postId);
 
@@ -18,35 +22,15 @@ const Post = props => {
             <div className={styles.post}>
                 <div className={styles.content}>
                     <img src={post.image} alt='Blog Post' />
+                    <p className={styles.tag}>{post.category}</p>
 
-                    <h1>{post.title}</h1>
+                    <h1 className={styles.title}>{post.title}</h1>
 
-                    <p>{post.description}</p>
+                    <p>{post.slug}</p>
 
                     <hr />
 
-                    <h2>New Features</h2>
-                    <p>{post.description}</p>
-
-                    <h2>APIs</h2>
-                    <p>{post.description}</p>
-                    <p>{post.description}</p>
-                    <p>{post.description}</p>
-
-                    <h2>Power of our Apps</h2>
-                    <p>{post.description}</p>
-                    <p>{post.description}</p>
-
-                    <img src={post.image} alt='Blog Post' />
-
-                    <h2>Lead Generation</h2>
-                    <p>{post.description}</p>
-
-                    <h2>My Pro Tip</h2>
-                    <p className={styles.quote}>{post.description}</p>
-
-                    <h2>Wrapping it up</h2>
-                    <p>{post.description}</p>
+                    <ReactMarkdown>{post.description}</ReactMarkdown>
 
                     <hr />
 
@@ -55,20 +39,30 @@ const Post = props => {
                             <img src='/admin.jpg' alt='Admin' />
                             <div className={styles.text}>
                                 <p>About the author</p>
-                                <h2>Hussain Ahmad</h2>
+                                <h2>{post.owner}</h2>
                             </div>
                         </div>
 
-                        <p>{post.description}</p>
+                        <p>{post.about}</p>
                     </div>
 
                     <hr />
 
-                    <Comments />
+                    {post.comments.length !== 0 && (
+                        <>
+                            <Comments comments={post.comments} />
+                            <hr />
+                        </>
+                    )}
 
-                    <hr />
-
-                    <AddComment />
+                    {isAuth ? <AddComment id={post._id} /> :
+                        (
+                            <>
+                                <Link href='/signin'><a className={styles.link}>Sign in</a></Link>
+                                <p style={{display: 'inline'}}> to post a comment.</p>
+                            </>
+                        )
+                    }
 
                 </div>
                 <div style={{marginTop: '-1.2rem'}}>

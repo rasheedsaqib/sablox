@@ -1,17 +1,22 @@
 import '../styles/globals.scss'
 import Head from "next/head";
-import Navbar from "../UI/Navbar/navbar";
 import Notification from "../UI/Notification/notification";
-import Newsletter from "../UI/Newsletter/newsletter";
-import Footer from "../UI/Footer/footer";
+import 'react-toastify/dist/ReactToastify.css';
 import {useRouter} from "next/router";
+import {ToastContainer} from "react-toastify";
+import {AuthContextProvider} from '../store/AuthContext';
 
-function MyApp({Component, pageProps}) {
+const MyApp = ({Component, pageProps}) => {
 
     const router = useRouter();
 
+    let showNewsletter = true;
+    if(['/signup', '/signin'].includes(router.pathname)){
+        showNewsletter = false;
+    }
+
     return (
-        <>
+        <AuthContextProvider>
             <Head>
                 <title>SaBloX</title>
 
@@ -22,24 +27,18 @@ function MyApp({Component, pageProps}) {
                     rel="stylesheet"/>
 
 
-                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
 
                 <link rel='icon' href='/favicon.ico'/>
 
             </Head>
 
-            <Notification/>
-            <Navbar/>
+            <ToastContainer autoClose={2000} />
+
+            {showNewsletter ? <Notification/> : null}
 
             <Component {...pageProps} />
-
-            {router.pathname !== '/404' ?
-                <Newsletter/>
-            :
-                null}
-
-            <Footer />
-        </>
+        </AuthContextProvider>
     )
 }
 
