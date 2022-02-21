@@ -22,8 +22,10 @@ const Post = props => {
 
 export async function getStaticProps() {
 
-    const posts = await axios.get('/posts');
+    const posts = await axios.get('/posts') || [];
     const constants = await axios.get('/constants');
+
+    console.log(posts.data);
 
     return {
         props: {
