@@ -2,7 +2,7 @@ import axios from "axios";
 import {toast} from "react-toastify";
 
 const instance = axios.create({
-    baseURL: 'http://localhost:8080/api/'
+    baseURL: 'https://sablox-admin.herokuapp.com/api'
 });
 
 instance.interceptors.response.use((response) => response, (error) => {

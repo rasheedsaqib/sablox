@@ -15,13 +15,13 @@ const Home = props => {
     return (
         <>
             <Navbar/>
-            <SelectedBlog posts={props.posts} />
-            <Categories categories={props.categories} selected={selected} setSelected={setSelected} />
+            <SelectedBlog posts={props.posts}/>
+            <Categories categories={props.categories} selected={selected} setSelected={setSelected}/>
             <Blogs
                 posts={selected === '001' ? props.posts : props.posts.filter(post => post.category._id === selected)}
                 constants={props.constants}
             />
-            <Newsletter />
+            <Newsletter/>
             <Footer/>
         </>
     )
@@ -29,21 +29,21 @@ const Home = props => {
 
 export async function getStaticProps() {
 
-    const posts = await axios.get('/posts') || [];
-    const categories = await axios.get('/categories') || [];
+    const posts = await axios.get('/posts');
+    const categories = await axios.get('/categories');
     const constants = await axios.get('/constants');
 
     return {
         props: {
-            posts: posts.data.map(post => {
+            posts: posts.data ? posts.data.map(post => {
                 const date = new Date(post.createdAt);
-                return{
+                return {
                     ...post,
                     owner: post.owner.firstName + ' ' + post.owner.lastName,
                     about: post.owner.about,
-                    date: date.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric' })
+                    date: date.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})
                 }
-            }),
+            }) : [],
             categories: categories.data,
             constants: constants.data,
         },

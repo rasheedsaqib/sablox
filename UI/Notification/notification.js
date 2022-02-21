@@ -11,6 +11,9 @@ const Notification = () => {
             .then(res => {
                 setNews(res.data.news);
             })
+            .catch(err => {
+                console.log(err);
+            })
     })
 
     return(
