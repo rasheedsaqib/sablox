@@ -1,6 +1,7 @@
 import styles from './newsletter.module.scss';
 
 const Newsletter = props => {
+
     return (
         <div className={styles.newsletter}>
             <p className={styles.upperTitle}>NEWSLETTER</p>

@@ -13,8 +13,8 @@ const Post = props => {
     return(
         <>
             <Navbar/>
-            <PostPage posts={props.posts} postId={router.query.postId} />
-            <Newsletter/>
+            <PostPage posts={props.posts} postId={router.query.postId} constants={props.constants} />
+            <Newsletter news={props.constants.news} />
             <Footer/>
         </>
     )
@@ -23,6 +23,7 @@ const Post = props => {
 export async function getStaticProps() {
 
     const posts = await axios.get('/posts');
+    const constants = await axios.get('/constants');
 
     return {
         props: {
@@ -35,8 +36,10 @@ export async function getStaticProps() {
                     about: post.owner.about,
                     createdAt: date.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric' })
                 }
-            })
-        }
+            }),
+            constants: constants.data
+        },
+        revalidate: 10
     }
 }
 

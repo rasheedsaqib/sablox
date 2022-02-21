@@ -31,7 +31,7 @@ const Blogs = props => {
             <div style={{marginTop: '-1.2rem'}}>
                 <Ads/>
                 <Newsletter/>
-                <Socials/>
+                <Socials constants={props.constants}/>
                 <Ads/>
                 <TopPosts posts={props.posts}/>
             </div>

@@ -1,9 +1,21 @@
 import styles from './notification.module.scss';
+import {useEffect, useState} from "react";
+import axios from "../../util/axios";
 
 const Notification = () => {
+
+    const [news, setNews] = useState('');
+
+    useEffect(() => {
+        axios.get('/constants')
+            .then(res => {
+                setNews(res.data.news);
+            })
+    })
+
     return(
         <div className={styles.notification}>
-            <p>Some important notification!</p>
+            <p>{news}</p>
         </div>
     )
 }

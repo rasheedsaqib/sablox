@@ -17,7 +17,10 @@ const Home = props => {
             <Navbar/>
             <SelectedBlog posts={props.posts} />
             <Categories categories={props.categories} selected={selected} setSelected={setSelected} />
-            <Blogs posts={selected === '001' ? props.posts : props.posts.filter(post => post.category._id === selected)} />
+            <Blogs
+                posts={selected === '001' ? props.posts : props.posts.filter(post => post.category._id === selected)}
+                constants={props.constants}
+            />
             <Newsletter />
             <Footer/>
         </>
@@ -28,6 +31,7 @@ export async function getStaticProps() {
 
     const posts = await axios.get('/posts');
     const categories = await axios.get('/categories');
+    const constants = await axios.get('/constants');
 
     return {
         props: {
@@ -40,8 +44,10 @@ export async function getStaticProps() {
                     date: date.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric' })
                 }
             }),
-            categories: categories.data
-        }
+            categories: categories.data,
+            constants: constants.data,
+        },
+        revalidate: 10
     }
 }
 
