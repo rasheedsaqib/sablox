@@ -29,8 +29,8 @@ const Home = props => {
 
 export async function getStaticProps() {
 
-    const posts = await axios.get('/posts');
-    const categories = await axios.get('/categories');
+    const posts = await axios.get('/posts') || [];
+    const categories = await axios.get('/categories') || [];
     const constants = await axios.get('/constants');
 
     return {
