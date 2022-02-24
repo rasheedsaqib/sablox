@@ -10,15 +10,17 @@ import {useState} from "react";
 
 const Home = props => {
 
+    const posts = props.posts ? [...props.posts] : [];
+
     const [selected, setSelected] = useState('001');
 
     return (
         <>
             <Navbar/>
-            <SelectedBlog posts={props.posts}/>
+            <SelectedBlog posts={posts}/>
             <Categories categories={props.categories} selected={selected} setSelected={setSelected}/>
             <Blogs
-                posts={selected === '001' ? props.posts : props.posts.filter(post => post.category._id === selected)}
+                posts={selected === '001' ? posts : posts.filter(post => post.category._id === selected)}
                 constants={props.constants}
             />
             <Newsletter/>
