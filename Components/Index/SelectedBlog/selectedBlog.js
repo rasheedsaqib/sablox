@@ -3,7 +3,9 @@ import Link from "next/link";
 
 const SelectedBlog = props => {
 
-    const post = props.posts.sort((a,b) => (a.views < b.views) ?  -1 : 1).at(-1);
+    const posts = props.posts ? [...props.posts] : [];
+
+    const post = posts.sort((a,b) => (a.views < b.views) ?  -1 : 1).at(-1);
 
     return (
         <div className={styles.selectedBlog}>
